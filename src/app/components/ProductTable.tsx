@@ -172,7 +172,7 @@ const DataTable = () => {
            
           </tr>
           <tr className="bg-gray-100">
-            <th rowSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">EDB</th>
+            <th rowSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-column">EDB</th>
             <th rowSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">CFM</th>
             {outdoorTemps.map((temp) => (
             
@@ -185,7 +185,7 @@ const DataTable = () => {
           {outdoorTemps.map((temp) => (
               <React.Fragment key={`${temp}-headers`}>
                 <th className="border border-gray-300 px-4 py-2">Total</th>
-                <th className="border border-gray-300 px-4 py-2">Integ</th>
+                <th className="border border-gray-300 bg-gray-100 px-4 py-2">Integ</th>
                 <th className="border border-gray-300 px-4 py-2">kW</th>
               </React.Fragment>
             ))}
@@ -227,13 +227,12 @@ const DataTable = () => {
                         }
                       }
                     }
-
                     return (
                       <React.Fragment key={`${outdoorTemps}-${temp}-${cfm}`}>
                         <td className="border border-gray-300 px-4 py-2 text-center">
                           {tempCFMData?.["Capacity (Mbtuh)"]?.Total || "-"}
                         </td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">
+                        <td className="border border-gray-300 bg-gray-100 px-4 py-2 text-center">
                           {tempCFMData?.["Capacity (Mbtuh)"]?.Integ || "-"}
                         </td>
                         <td className="border border-gray-300 px-4 py-2 text-center">
