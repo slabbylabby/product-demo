@@ -89,14 +89,14 @@ table {
 }
 
 td:hover {
-  background-color: #d1d5db; /* Tailwind's gray-300 */
+  background-color: #d1d5db; 
   transition: background 0.2s ease-in-out;
 }
 
 
 .sticky-header:last-child,
 .sticky-column:last-child {
-  border-right: none; /* Remove right border for the last sticky element */
+  border-right: none; 
 }
 
 
