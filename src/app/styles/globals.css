@@ -20,6 +20,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
 .sticky-column {
   position: sticky;
   left: 0;
@@ -45,7 +51,7 @@ body {
   top: 0;
   background: white;
   z-index: 5;
-  border-right: 1px solid #000; 
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1200 {
@@ -56,7 +62,8 @@ body {
   min-width: 100px; 
   max-width: 100px; 
   text-align: center;
-  border-right: 1px solid #000; 
+  border-spacing: 0px;
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1400 {
@@ -67,7 +74,7 @@ body {
   min-width: 100px; 
   max-width: 100px; 
   text-align: center;
-  border-right: 1px solid #000; 
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1550 {
@@ -78,10 +85,19 @@ body {
   min-width: 100px; 
   max-width: 100px; 
   text-align: center;
-  border-right: 1px solid #000; 
+  border-right: 3px solid rgb(59 130 246); 
 }
 
 td:hover {
   background-color: #d1d5db; /* Tailwind's gray-300 */
   transition: background 0.2s ease-in-out;
 }
+
+
+.sticky-header:last-child,
+.sticky-column:last-child {
+  border-right: none; /* Remove right border for the last sticky element */
+}
+
+
+

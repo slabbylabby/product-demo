@@ -13,12 +13,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="bg-gray-900 text-white">
-      <nav className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+    <header className="bg-blue-500 text-white">
+      <nav className="max-w-autox mx-auto px-4 py-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-bold">
-            <Link href="/">MyBrand</Link>
+          <div className="text-2xl font-bold justify-content-start">
+            <Link href="/">Carrier</Link>
           </div>
 
           {/* Desktop Menu */}
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } md:hidden absolute left-0 w-full bg-gray-800 text-white mt-4 p-4 space-y-4`}
+          } md:hidden absolute left-0 w-full bg-blue-500 text-white mt-4 p-4 space-y-4`}
         >
           <Link href="/" className="text-lg hover:text-gray-400">
             Home

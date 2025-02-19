@@ -164,29 +164,34 @@ const DataTable = () => {
 
   return (
     <div className="overflow-x-auto text-black">
-      <table className="table-auto border-collapse border border-gray-400 w-full">
+      <table className="table-auto border-separate border border-gray-400 w-full">
         <thead>
           <tr className="bg-gray-200">
             <th colSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">Indoor Air</th>
             <th colSpan={24} className="border border-gray-300 px-2 py-2 text-center">Outdoor Air</th>
-           
           </tr>
           <tr className="bg-gray-100">
-            <th rowSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-column">EDB</th>
-            <th rowSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">CFM</th>
+            <th rowSpan={3} className="border border-gray-300 px-2 py-2 text-center sticky-column">EDB</th>
+            <th rowSpan={3} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">CFM</th>
             {outdoorTemps.map((temp) => (
-            
               <th key={temp} colSpan={3} className="border border-gray-300 px-4 py-2 text-center">
                 {temp}
               </th>
             ))}
           </tr>
           <tr>
-          {outdoorTemps.map((temp) => (
+            {outdoorTemps.map((temp) => (
               <React.Fragment key={`${temp}-headers`}>
-                <th className="border border-gray-300 px-4 py-2">Total</th>
-                <th className="border border-gray-300 bg-gray-100 px-4 py-2">Integ</th>
-                <th className="border border-gray-300 px-4 py-2">kW</th>
+                <th colSpan={2} className="border border-gray-300 px-4 py-2 text-xs">Capacity (Mbtuh)</th>
+                <th rowSpan={2} className="border border-gray-300 bg-yellow-100 px-4 py-2">kW</th>
+              </React.Fragment>
+            ))}
+          </tr>
+          <tr>
+            {outdoorTemps.map((temp) => (
+              <React.Fragment key={`${temp}-subHeaders`}>
+                <th className="border border-gray-300 px-4 py-2 text-sm">Total</th>
+                <th className="border border-gray-300 bg-gray-100 px-4 py-2 text-sm">Integ</th>
               </React.Fragment>
             ))}
           </tr>
@@ -204,7 +209,7 @@ const DataTable = () => {
                     </td>
                   )}
                   <td className={`border border-gray-300 px-2 py-2 text-center cfm-${cfm}`} >{cfm}</td>
-                  
+
                   {outdoorTemps.map((temp) => {
                     const tempDataArray = data["Outdoor Coil Entering Air Temp"][temp];
 
@@ -235,7 +240,7 @@ const DataTable = () => {
                         <td className="border border-gray-300 bg-gray-100 px-4 py-2 text-center">
                           {tempCFMData?.["Capacity (Mbtuh)"]?.Integ || "-"}
                         </td>
-                        <td className="border border-gray-300 px-4 py-2 text-center">
+                        <td className="border border-gray-300 bg-yellow-100 px-4 py-2 text-center">
                           {tempCFMData?.kW || "-"}
                         </td>
                       </React.Fragment>
@@ -250,5 +255,8 @@ const DataTable = () => {
     </div>
   );
 };
+
+
+
 
 export default DataTable;
