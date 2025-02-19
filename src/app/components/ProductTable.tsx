@@ -166,10 +166,12 @@ const DataTable = () => {
     <div className="overflow-x-auto text-black">
       <table className="table-auto border-separate border border-gray-400 w-full">
         <thead>
+          {/* Table Headers */}
           <tr className="bg-gray-200">
             <th colSpan={2} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">Indoor Air</th>
             <th colSpan={24} className="border border-gray-300 px-2 py-2 text-center">Outdoor Air</th>
           </tr>
+          {/* Indoor Air Sub Headers */}
           <tr className="bg-gray-100">
             <th rowSpan={3} className="border border-gray-300 px-2 py-2 text-center sticky-column">EDB</th>
             <th rowSpan={3} className="border border-gray-300 px-2 py-2 text-center sticky-header sticky-column">CFM</th>
@@ -180,6 +182,7 @@ const DataTable = () => {
             ))}
           </tr>
           <tr>
+            {/** Outdoor Air Sub Headers */}
             {outdoorTemps.map((temp) => (
               <React.Fragment key={`${temp}-headers`}>
                 <th colSpan={2} className="border border-gray-300 px-4 py-2 text-xs">Capacity (Mbtuh)</th>
@@ -188,6 +191,7 @@ const DataTable = () => {
             ))}
           </tr>
           <tr>
+            {/* Outdoor Air Sub-Sub Headers */}
             {outdoorTemps.map((temp) => (
               <React.Fragment key={`${temp}-subHeaders`}>
                 <th className="border border-gray-300 px-4 py-2 text-sm">Total</th>
@@ -200,7 +204,7 @@ const DataTable = () => {
           {data["Indoor Air"].EDB.map((edb, edbIndex) =>
             edb.CFM.map((cfm, cfmIndex) => {
               const rowKey = `row-${edbIndex}-${cfmIndex}`;
-
+              {/* Render each row */}
               return (
                 <tr key={rowKey} className="bg-white">
                   {cfmIndex === 0 && (
@@ -209,10 +213,10 @@ const DataTable = () => {
                     </td>
                   )}
                   <td className={`border border-gray-300 px-2 py-2 text-center cfm-${cfm}`} >{cfm}</td>
-
+                  {/* Map outdoor temperatures */}
                   {outdoorTemps.map((temp) => {
                     const tempDataArray = data["Outdoor Coil Entering Air Temp"][temp];
-
+                    {/* Check if data is missing */}
                     if (!tempDataArray) {
                       return (
                         <React.Fragment key={`missing-${temp}`}>
@@ -223,7 +227,7 @@ const DataTable = () => {
                       );
                     }
                     let tempCFMData = null;
-
+                    {/* Find the sub-data within sub-headers */}
                     for (const tempData of tempDataArray) {
                       for (const [subTempKey, tempDataArray] of Object.entries(tempData)) {
                         if (subTempKey === edb.value) {
@@ -232,6 +236,7 @@ const DataTable = () => {
                         }
                       }
                     }
+                    {/* Render each cell */}
                     return (
                       <React.Fragment key={`${outdoorTemps}-${temp}-${cfm}`}>
                         <td className="border border-gray-300 px-4 py-2 text-center">
