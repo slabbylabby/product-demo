@@ -27,7 +27,7 @@ export default function ProductPage() {
             <h1 className="text-4xl font-bold text-gray-900 flex-shrink-0">Cooling Product</h1>
 
             {/* Button to View More Products */}
-            <div className="ml-auto mr-12">
+            <div className="ml-5 mr-5">
               <Link href="/product-grid">
                 <button className="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200">
                   View All Products
@@ -58,14 +58,14 @@ export default function ProductPage() {
                 </div>
 
                 {/* Description Card */}
-                <div className="flex flex-col mt-2 border rounded-lg shadow-lg" style={{ height: '100px', width: '100%' }}>
+                <div className="flex flex-col mt-2 border rounded-lg shadow-lg mb-2" style={{ height: '100px', width: '100%' }}>
                   <div className="flex h-full">
                     <p className="flex-1 text-gray-700 h-full p-2">
                       This is a brief description of the product. It explains its features and benefits.
                     </p>
-                    <div className="flex flex-col items-center justify-center ml-1" style={{ width: '25%' }}>
+                    <div className="flex flex-col items-center justify-center ml-1 mr-1" style={{ width: '35%' }}>
                       <button 
-                        className="bg-blue-500 text-white px-5 py-2 rounded"
+                        className="bg-blue-500 text-white px-4 py-2 rounded"
                         onClick={toggleTableVisibility} // Toggle table visibility
                       >
                         {isTableVisible ? "Hide Information" : "Show Information"}
