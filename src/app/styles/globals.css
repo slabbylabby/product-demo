@@ -20,24 +20,29 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
 .sticky-column {
   position: sticky;
   left: 0;
-  background: white;  /* Keep background solid */
-  z-index: 2;  /* Keeps columns on top */
-  min-width: 100px; /* Adjust as needed */
-  max-width: 100px; /* Prevents shrinking */
+  background: white;  
+  z-index: 2;  
+  min-width: 100px; 
+  max-width: 100px; 
   text-align: center;
-  border-right: 1px solid #ddd; /* Adds a divider */
 }
 
 .sticky-column:nth-child(2) {
-  left: 100px; /* Moves EDB right */
+  left: 100px; 
   z-index: 3;
 }
 
 .sticky-column:nth-child(3) {
-  left: 200px; /* Moves CFM further right */
+  left: 200px; 
   z-index: 4;
 }
 
@@ -46,34 +51,53 @@ body {
   top: 0;
   background: white;
   z-index: 5;
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1200 {
   position: sticky;
-  background: white;  /* Keep background solid */
-  left: 100px; /* Adjust based on EDB */
+  background: white;  
+  left: 100px; 
   z-index: 4;
-  min-width: 100px; /* Adjust as needed */
-  max-width: 100px; /* Prevents shrinking */
+  min-width: 100px; 
+  max-width: 100px; 
   text-align: center;
+  border-spacing: 0px;
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1400 {
   position: sticky;
-  background: white;  /* Keep background solid */
-  left: 100px; /* Move right of 1200 */
+  background: white; 
+  left: 100px; 
   z-index: 4;
-  min-width: 100px; /* Adjust as needed */
-  max-width: 100px; /* Prevents shrinking */
+  min-width: 100px; 
+  max-width: 100px; 
   text-align: center;
+  border-right: 3px solid rgb(59 130 246);
 }
 
 .cfm-1550 {
   position: sticky;
-  background: white;  /* Keep background solid */
-  left: 100px; /* Move right of 1400 */
+  background: white;  
+  left: 100px; 
   z-index: 4;
-  min-width: 100px; /* Adjust as needed */
-  max-width: 100px; /* Prevents shrinking */
+  min-width: 100px; 
+  max-width: 100px; 
   text-align: center;
+  border-right: 3px solid rgb(59 130 246); 
 }
+
+td:hover {
+  background-color: #d1d5db; /* Tailwind's gray-300 */
+  transition: background 0.2s ease-in-out;
+}
+
+
+.sticky-header:last-child,
+.sticky-column:last-child {
+  border-right: none; /* Remove right border for the last sticky element */
+}
+
+
+
