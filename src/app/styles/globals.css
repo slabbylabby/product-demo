@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sticky-column {
+  position: sticky;
+  left: 0;
+  background: white;  /* Keep background solid */
+  z-index: 2;  /* Keeps columns on top */
+  min-width: 100px; /* Adjust as needed */
+  max-width: 100px; /* Prevents shrinking */
+  text-align: center;
+  border-right: 1px solid #ddd; /* Adds a divider */
+}
+
+.sticky-column:nth-child(2) {
+  left: 100px; /* Moves EDB right */
+  z-index: 3;
+}
+
+.sticky-column:nth-child(3) {
+  left: 200px; /* Moves CFM further right */
+  z-index: 4;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 5;
+}
+
+.cfm-1200 {
+  position: sticky;
+  background: white;  /* Keep background solid */
+  left: 100px; /* Adjust based on EDB */
+  z-index: 4;
+  min-width: 100px; /* Adjust as needed */
+  max-width: 100px; /* Prevents shrinking */
+  text-align: center;
+}
+
+.cfm-1400 {
+  position: sticky;
+  background: white;  /* Keep background solid */
+  left: 100px; /* Move right of 1200 */
+  z-index: 4;
+  min-width: 100px; /* Adjust as needed */
+  max-width: 100px; /* Prevents shrinking */
+  text-align: center;
+}
+
+.cfm-1550 {
+  position: sticky;
+  background: white;  /* Keep background solid */
+  left: 100px; /* Move right of 1400 */
+  z-index: 4;
+  min-width: 100px; /* Adjust as needed */
+  max-width: 100px; /* Prevents shrinking */
+  text-align: center;
+}
