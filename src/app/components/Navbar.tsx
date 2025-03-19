@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
         <div className="relative flex items-center justify-between">
           {/* Logo */}
           <div className="text-2xl font-bold justify-content-start">
-            <Link href="/">Carrier</Link>
+            <Link href="/">HVAC Company</Link>
           </div>
 
           {/* Desktop Menu */}

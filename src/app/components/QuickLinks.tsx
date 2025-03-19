@@ -1,27 +1,16 @@
 // components/QuickLinks.js
-import { useState } from 'react';
 
 const QuickLinks = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div
-      className={`fixed right-0 top-1/4 bg-white border border-gray-300 shadow-lg transition-all duration-300 ${isOpen ? 'w-40' : 'w-12'}`}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <div className={`flex items-center justify-center h-full ${isOpen ? 'flex-col' : 'flex-row'}`}>
-        <span className="text-black"> Quick Links</span>
-        {isOpen && (
-          <>
-            <a href="#link1" className="py-2 text-gray-700 hover:text-blue-500">Link 1</a>
-            <a href="#link2" className="py-2 text-gray-700 hover:text-blue-500">Link 2</a>
-            <a href="#link3" className="py-2 text-gray-700 hover:text-blue-500">Link 3</a>
-            <a href="#link4" className="py-2 text-gray-700 hover:text-blue-500">Link 4</a>
-          </>
-        )}
-        <span className={`text-center ${isOpen ? 'hidden' : 'block'}`}>...</span>
-      </div>
+    <div className="w-full sm:w-[100%] p-4 border rounded-lg shadow-lg bg-gray-50 text-center">
+      <h2 className="font-semibold text-lg text-blue-700 border-b-2 border-blue-500 pb-1">Quick Links</h2>
+      <ul className="space-y-3 mt-3">
+        <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">📜 <span className="ml-2">Purchase Info.</span></a></li>
+        <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">🏪 <span className="ml-2">Vendors</span></a></li>
+        <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">📦 <span className="ml-2">Unit Info.</span></a></li>
+        <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">🛠️ <span className="ml-2">Warranty Info.</span></a></li>
+        <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">⭐ <span className="ml-2">Customer Reviews</span></a></li>
+      </ul>
     </div>
   );
 };

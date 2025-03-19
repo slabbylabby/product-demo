@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import ProductTable from "./components/ProductTable"; 
+import QuickLinks from "./components/QuickLinks";
 
 export default function ProductPage() {
   const [isTableVisible, setIsTableVisible] = useState(true); 
@@ -20,12 +21,28 @@ export default function ProductPage() {
         <div className="bg-white border border-gray-300 rounded-lg shadow-lg p-4">
           
           <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4 sm:mb-0">Cooling Product</h1>
-            <Link href="/product-grid">
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200">
-                View All Products
-              </button>
-            </Link>
+            <div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4 sm:mb-0">Cooling Product</h1>
+            </div>
+
+            <div className="p-1 flex items-center space-x-1">
+              <Link href="#">
+                
+                <button className="bg-gray-500 text-white px-4 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-400 transition duration-200">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                  </svg>
+
+                </button>
+              </Link>
+
+              <Link href="/product-grid">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition duration-200">
+                  View All Products
+                </button>
+              </Link>
+            </div>
           </div>
 
           {/* Main Content */}
@@ -66,24 +83,16 @@ export default function ProductPage() {
             </div>
 
             {/* Product Info and Table */}
-            <div id="dataTable" 
-              className={`flex flex-col justify-start w-full sm:w-[65%] space-y-4 transition-opacity duration-300 ${isTableVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            <div id="dataTable"
+              className={`flex flex-col justify-start w-full sm:w-[65%] p-1 border-2 border-gray-500 rounded space-y-4 transition-opacity duration-300 ${isTableVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             >
               <ProductTable />
             </div>
 
             {/* Quick Links */}
-            <div className="w-full sm:w-[15%] p-4 border rounded-lg shadow-lg bg-gray-100 text-center">
-              <h2 className="font-semibold text-lg text-blue-700 border-b-2 border-blue-500 pb-1">Quick Links</h2>
-              <ul className="space-y-3 mt-3">
-                <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">📜 <span className="ml-2">Purchase Info.</span></a></li>
-                <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">🏪 <span className="ml-2">Vendors</span></a></li>
-                <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">📦 <span className="ml-2">Unit Info.</span></a></li>
-                <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">🛠️ <span className="ml-2">Warranty Info.</span></a></li>
-                <li><a href="#" className="flex justify-center sm:justify-start items-center text-gray-800 hover:text-blue-600 transition duration-200">⭐ <span className="ml-2">Customer Reviews</span></a></li>
-              </ul>
+            <div id="quickLinks" className="w-full sm:w-[15%] p-4 border rounded-lg shadow-lg bg-gray-100 text-center">
+              <QuickLinks />
             </div>
-
           </div>
 
           {/* Footer Links */}
